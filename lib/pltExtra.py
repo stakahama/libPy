@@ -11,8 +11,11 @@ coltable = pd.read_csv(os.path.join(here,'Rcolortable.csv'),index_col=0)
 
 def abline(intercept=0,slope=1):
     gca = plt.gca()
+    default = gca.get_autoscale_on()
     gca.set_autoscale_on(False)
     gca.plot(gca.get_xlim(),gca.get_ylim())
+    if default:
+        gca.set_autoscale_on(default)
     # gca.set_aspect('equal','box')    
     # lim = ax.get_xlim()
 
@@ -78,4 +81,10 @@ def cut(x,breaks,labels=None,right=False):
     if labels:
         out = pd.Series(labels).ix[out]
     return out
+
+def dev_list():
+    import matplotlib
+    figures = [manager.canvas.figure
+               for manager in matplotlib._pylab_helpers.Gcf.get_all_fig_managers()]
+    return figures
 

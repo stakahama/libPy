@@ -9,7 +9,7 @@ def read_orgtable(filename,header=True):
             if '|-' == line[:2]:
                 continue
             out.append(map(str.strip,line.strip().strip('|').split('|')))
-    if headers:
+    if header:
         names = out[0]
         rest = out[1:]
     else:
