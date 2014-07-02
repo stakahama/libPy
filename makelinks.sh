@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ln -svf $PWD/lib $HOME/lib/python
+ln -svf $PWD/lib $HOME/lib/py

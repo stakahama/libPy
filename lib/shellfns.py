@@ -1,5 +1,4 @@
-
+import subprocess as suprocess
 
 def popen_read(cmd):
-    import subprocess as spr
-    return spr.Popen(cmd,shell=True,stdout=spr.PIPE).communicate()[0]
+    return subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE).communicate()[0]
